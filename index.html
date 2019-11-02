@@ -1,0 +1,93 @@
+<html>
+    <head>
+            <link href="https://fonts.googleapis.com/css?family=Comfortaa&display=swap" rel="stylesheet">
+    <style>
+            body {
+                margin: 0;
+            }
+            .bars {
+                width: 100%; 
+                display: flex;
+            }
+ 
+            .bar {
+                display: grid; 
+
+                justify-content: center;
+                align-content: center;
+                width: 3%;
+                height: 33.33vh; 
+                background-color: black;
+                transition: width 0.4s ease-in-out;
+                overflow: hidden;
+            }
+   
+            .bar:hover {
+                width: 100%;
+       
+            }
+            
+            .bar:hover > h1 {
+                visibility: visible;
+                opacity: 1;
+                transition: opacity 0.7s ease-in-out;
+
+            }
+            h1 {
+                color: #121212;
+                font-family: 'Comfortaa', cursive;
+                visibility: hidden;
+                font-size: 3vw;
+                opacity: 0;
+            }
+    
+        </style>
+
+</head>
+    <body>
+         </div>
+        
+    
+    
+    <script>
+    
+        const CSS_COLOR_NAMES = ["AliceBlue","AntiqueWhite","Aqua","Aquamarine","Azure","Beige","Bisque","Black","BlanchedAlmond","Blue","BlueViolet","Brown","BurlyWood","CadetBlue","Chartreuse","Chocolate","Coral","CornflowerBlue","Cornsilk","Crimson","Cyan","DarkBlue","DarkCyan","DarkGoldenRod","DarkGray","DarkGrey","DarkGreen","DarkKhaki","DarkMagenta","DarkOliveGreen","DarkOrange","DarkOrchid","DarkRed","DarkSalmon","DarkSeaGreen","DarkSlateBlue","DarkSlateGray","DarkSlateGrey","DarkTurquoise","DarkViolet","DeepPink","DeepSkyBlue","DimGray","DimGrey","DodgerBlue","FireBrick","FloralWhite","ForestGreen","Fuchsia","Gainsboro","GhostWhite","Gold","GoldenRod","Gray","Grey","Green","GreenYellow","HoneyDew","HotPink","IndianRed","Indigo","Ivory","Khaki","Lavender","LavenderBlush","LawnGreen","LemonChiffon","LightBlue","LightCoral","LightCyan","LightGoldenRodYellow","LightGray","LightGrey","LightGreen","LightPink","LightSalmon","LightSeaGreen","LightSkyBlue","LightSlateGray","LightSlateGrey","LightSteelBlue","LightYellow","Lime","LimeGreen","Linen","Magenta","Maroon","MediumAquaMarine","MediumBlue","MediumOrchid","MediumPurple","MediumSeaGreen","MediumSlateBlue","MediumSpringGreen","MediumTurquoise","MediumVioletRed","MidnightBlue","MintCream","MistyRose","Moccasin","NavajoWhite","Navy","OldLace","Olive","OliveDrab","Orange","OrangeRed","Orchid","PaleGoldenRod","PaleGreen","PaleTurquoise","PaleVioletRed","PapayaWhip","PeachPuff","Peru","Pink","Plum","PowderBlue","Purple","RebeccaPurple","Red","RosyBrown","RoyalBlue","SaddleBrown","Salmon","SandyBrown","SeaGreen","SeaShell","Sienna","Silver","SkyBlue","SlateBlue","SlateGray","SlateGrey","Snow","SpringGreen","SteelBlue","Tan","Teal","Thistle","Tomato","Turquoise","Violet","Wheat","White","WhiteSmoke","Yellow","YellowGreen"];
+        const CSS_COLOR_1 = CSS_COLOR_NAMES.slice(0,(CSS_COLOR_NAMES.length/3))
+        const CSS_COLOR_2 = CSS_COLOR_NAMES.slice(CSS_COLOR_1.length, CSS_COLOR_NAMES.length/1.5)
+        const CSS_COLOR_3 = CSS_COLOR_NAMES.slice(CSS_COLOR_2.length*2, CSS_COLOR_NAMES.length)
+        
+        const COLOR_SETS = [CSS_COLOR_1, CSS_COLOR_2, CSS_COLOR_3]
+     
+        let body = document.querySelector('body')
+  
+
+        COLOR_SETS.forEach((COLOR_NAMES) => {
+            let colors = []
+            let bars = document.createElement('div')
+            bars.className = 'bars'
+                
+            COLOR_NAMES.forEach((color) => {
+            
+                let colorDIV = document.createElement('div')
+                colorDIV.className = 'bar'
+                colorDIV.style.backgroundColor = color 
+                let h1 = document.createElement('h1')
+                h1.innerText = color
+                colorDIV.appendChild(h1)
+                colors.push(colorDIV)
+
+                colors.forEach((colorBar) => {
+                    bars.appendChild(colorBar)
+                })
+
+            })
+            body.appendChild(bars)
+
+
+         } )
+
+         
+    </script>
+    </body>
+
+</html>
